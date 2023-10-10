@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>One-to-One Messaging System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>One-to-One Messaging System</h1>
+    <div class="message-container">
+        {% for message in messages %}
+        <div class="message">{{ message }}</div>
+        {% endfor %}
+    </div>
+    <form action="/send_message" method="post">
+        <input type="text" name="message" placeholder="Enter your message...">
+        <input type="submit" value="Send">
+    </form>
+</body>
+</html>
